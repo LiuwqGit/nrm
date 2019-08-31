@@ -353,7 +353,11 @@ function onHome(name, browser) {
     var home = allRegistries[name] && allRegistries[name].home;
     if (home) {
         var args = [home];
-        if (browser) args.push(browser);
+        if (browser) {
+            args.push({
+                app: browser
+            })
+        };
         open.apply(null, args);
     }
 }
